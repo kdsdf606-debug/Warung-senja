@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Warung Senja</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #1d1826; }
+  body { display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  canvas { display: block; image-rendering: pixelated; touch-action: none; user-select: none; }
+</style>
+</head>
+<body>
+<canvas id="game" width="640" height="360"></canvas>
+<script>
+  // Selalu muat versi terbaru agar perubahan tidak tertahan cache browser.
+  const stamp = Date.now();
+  for (const name of ["fire-sound","radio-songs","sound-bank","audio","scene","shop","kitchen-art","right-art","cook","knives","ambient","ingredients","spices","cooking","recipes","customers","menu","main"]) {
+    const script = document.createElement('script');
+    script.src = 'src/' + name + '.js?v=' + stamp;
+    script.async = false;
+    document.body.appendChild(script);
+  }
+</script>
+</body>
+</html>
